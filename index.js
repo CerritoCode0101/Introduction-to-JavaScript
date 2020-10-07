@@ -18,7 +18,10 @@ Do the following:
    HINT: no function required
 */
 
-
+let votingAge = 20
+if(votingAge > 18) {
+  console.log(true)
+}
 
 /*
 Task 1b - Values
@@ -30,7 +33,13 @@ Do the following:
 
    HINT: no function required
 */
+var one = "Train"
+var two = "Car"
 
+if (two === "Car") {
+one = "Plane"
+}
+console.log(one)
 
 
 
@@ -45,7 +54,10 @@ Do the following:
 
    HINT: look up the Number method
 */
+let digit = "1999"
+digit = Number(digit)
 
+console.log(digit)
 
 
 
@@ -58,11 +70,11 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b){
+   return a * b 
   }
 
-
+  multiply(5, 6)
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -74,10 +86,11 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+    return age * 7
 }
 
+dogYears (32)
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -107,9 +120,33 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight, age){
+  if(age >= 1) {
+    if(weight <= 5) {
+      return .05 * weight
+    } else if (weight <= 10) {
+      return .04 * weight
+    } else if (weight <= 15) {
+      return .03 * weight
+    } else{
+      return .02 * weight }
+    } else{
+        if(age >= 0.166 && age < 0.33){
+          return .10 * weight
+        }else if (age >= 0.33 && age <=  0.583) {
+          return .05 * weight
+        } else {
+          return 0.4 * weight
+        }
+    }
+     
+
+
   }
+
+
+  hungryDog(15, 1)
+  
 
 
 
@@ -119,20 +156,27 @@ function hungryDog(/*add your code here*/){
 /*
 Create a global variable that randomly generates the computer's choice
 Use Math.random to determine the computers choice (Math.random gives a random number between 0 and 1)
-
 Use the game function below to do the following:
   1. Receive 2 parameters the user's choice and the computer's choice
   2. Return whether the user won, lost, or tied based on these rules of the game described below
-  
   RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
-  
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
+let computerChoice = Math.random()
 
-function game(/*add your code here*/){
-    /*add your code here*/
-}
+
+function game(userChoice, computerChoice){
   
+  if(computerChoice >= .66){
+    return "Rock"}
+  else if(computerChoice >= .33 && computerChoice <= .65) {
+    return "Paper"
+  }else{
+    return "scissors"
+  } 
+} 
+
+
   
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -146,9 +190,10 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(km){
+    return km * 0.621371
   }
+  miles(5)
 
 
 
@@ -160,10 +205,10 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(cm){
+    return cm / 30.48
   }
- 
+ feet(160)
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -176,9 +221,12 @@ Using the annoyingSong function below do the following:
       "(number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-  }
+function annoyingSong(n) {
+  for (let i = n; i > 0; i--) { console.log(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i -1} bottles of soda on the wall`); } 
+} 
+
+annoyingSong(5)
+
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -196,10 +244,21 @@ Using the grade function below do the following:
    below 60 = F
 */
   
-function grade(/*add your code here*/){
-    /*add your code here*/
-  }
-  
+let grade = Math.floor(Math.random() * 101);
+
+if(grade >= 90){
+  console.log("A")
+}else if(grade >= 80){
+  console.log("B")
+}else if(grade >= 70){
+  console.log("C")
+}else if(grade >= 60){
+  console.log("D")
+}else{
+  console.log("F")
+}
+
+console.log(grade)
   
   
   
