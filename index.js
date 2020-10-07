@@ -162,22 +162,30 @@ Use the game function below to do the following:
   RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
-let computerChoice = Math.random()
+let random = Math.random()
 
+function game(user){
+  let cChoice;
+    if(random >= .66){
+     cChoice = 'rock'
+     console.log(cChoice)}
+    else if(random >= .33 && random <= .65) {
+     cChoice = 'paper'
+     console.log(cChoice)
+    }else{
+     cChoice = 'scissors'
+     console.log(cChoice)
+    }if (user === 'rock' && cChoice === 'scissors' || user === 'paper' && cChoice === 'rock' || user === 'scissors' && cChoice === 'paper'){
+      return 'you win'
+    }else if(user === 'rock' && cChoice === 'paper' || user === 'paper' && cChoice === 'scissors' || user === 'scissors' && cChoice === 'rock'  ){
+      return "you lose"
+    }else{
+      return "tie game"
+    }
 
-function game(userChoice, computerChoice){
-  
-  if(computerChoice >= .66){
-    return "Rock"}
-  else if(computerChoice >= .33 && computerChoice <= .65) {
-    return "Paper"
-  }else{
-    return "scissors"
-  } 
-} 
-
-
-  
+    }
+/* type either rock paper or scissors into the single quotes to play :)*/
+  game('')
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -225,7 +233,7 @@ function annoyingSong(n) {
   for (let i = n; i > 0; i--) { console.log(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i -1} bottles of soda on the wall`); } 
 } 
 
-annoyingSong(5)
+annoyingSong(99)
 
 
 
